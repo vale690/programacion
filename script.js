@@ -145,7 +145,7 @@ function generatePlatform() {
   
   // X coordinate of the right edge of the furthest platform
   const lastPlatform = platforms[platforms.length - 1];
-  let furthestX = lastplatform.x + lastplatform.w;
+  let furthestX = lastPlatform.x + lastPlatform.w;
 
   const x =
     furthestX +
@@ -297,26 +297,26 @@ function animate(timestamp) {
         throw Error(`stick is ${sticks.last().rotation}°`);
       const stickFarX = sticks.last().x + sticks.last().length;
 
-      const platformTheSticKHits = platforms.find(
+      const platformTheStickHits = platforms.find(
         (platform) => platform.x < stickFarX && stickFarX < platform.x + platform.w
       );
 
       // If the stick hits the perfect area
       if (
         platformTheStickHits &&
-        platformTheSticKHits.x + platformTheSticKHits.w / 2 - perfectAreaSize / 2 <
+        platformTheStickHits.x + platformTheStickHits.w / 2 - perfectAreaSize / 2 <
           stickFarX &&
         stickFarX <
-          platformTheSticKHits.x + platformTheSticKHits.w / 2 + perfectAreaSize / 2 
+          platformTheStickHits.x + platformTheStickHits.w / 2 + perfectAreaSize / 2 
       )
-        return [platformTheSticKHits, true];
+        return [platformTheStickHits, true];
 
-        return [platformTheSticKHits, false];
+        return [platformTheStickHits, false];
       }
 
   function draw() {
   ctx.save();
-  ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+  ctx.learRect(0, 0, window.innerWidth, window.innerHeight);
 
   drawBackground();
 
