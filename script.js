@@ -293,7 +293,7 @@ function animate(timestamp) {
 
     // Returns the platform th stick hit (if it don't hit any stick ther return undefined)
     function thePlatformTheStickHits() {
-      if (sticks.last().rotation !=90)
+      if (sticks.last().rotation != 90)
         throw Error(`stick is ${sticks.last().rotation}°`);
       const stickFarX = sticks.last().x + sticks.last().length;
 
@@ -316,7 +316,7 @@ function animate(timestamp) {
 
   function draw() {
   ctx.save();
-  ctx.learRect(0, 0, window.innerWidth, window.innerHeight);
+  ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
   drawBackground();
 
